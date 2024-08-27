@@ -19,3 +19,8 @@ export class signUpDTO {
     password: string;
 
 }
+
+export class loginDTO {
+    email: string;
+    password: string;
+}

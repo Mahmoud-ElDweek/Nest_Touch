@@ -23,7 +23,7 @@ export class LoginService {
             return {message: "welcome", "token": token};
         } else {
             throw new HttpException(
-                'emial or password invalid',
+                'E-mail or password invalid',
                 HttpStatus.BAD_REQUEST,
             );
         }

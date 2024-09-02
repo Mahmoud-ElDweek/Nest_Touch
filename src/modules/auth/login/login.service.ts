@@ -19,7 +19,7 @@ export class LoginService {
         const user = await this.userModel.findOne({ email: info.email });
 
         if (user && (await bcrypt.compare(info.password, user.password))) {
-            const token = this._jwtService.sign({name:user.name,email:user.email},{secret:"MsM"})
+            const token = this._jwtService.sign({name:user.name,email:user.email,id:user._id},{secret:"MsM"})
             return {message: "welcome", "token": token};
         } else {
             throw new HttpException(

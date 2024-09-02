@@ -11,13 +11,14 @@ export class ArticlesService {
 
 
     addArticle = async(body: articleDTO) => {
+
         const addedArticle = await this.articleModel.insertMany(body);
         
         return {message: "Article Added", addedArticle}
     }
 
     getAllArticles = async () => {
-        const allArticles = await this.articleModel.find()
+        const allArticles = await this.articleModel.find().populate('author')
         return {message: "All Articles", allArticles}
     }
 

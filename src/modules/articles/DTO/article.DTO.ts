@@ -1,4 +1,4 @@
-import { IsArray, IsMongoId, IsNumber, IsString, ArrayNotEmpty, ArrayMinSize } from "class-validator";
+import { IsArray, IsMongoId, IsNumber, IsString, ArrayNotEmpty, ArrayMinSize, IsOptional } from "class-validator";
 
 export class articleDTO {
 
@@ -31,5 +31,6 @@ export class articleDTO {
     tagList: string[]; 
     
     @IsMongoId()
+    @IsOptional()
     author: string; 
 }
